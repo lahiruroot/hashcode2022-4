@@ -6,3 +6,11 @@ export const hello = async (value: number) => {
   console.debug(result);
   return value * 2;
 };
+
+describe("Cool", () => {
+  it("Is cool", async () => {
+    const result = await hello(2);
+
+    expect(result).toBe(4);
+  });
+});
