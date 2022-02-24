@@ -121,7 +121,9 @@ const run = (model: Model, {}: RunSimulationParams) => {
       roles: model.contributors.filter((c) =>
         c.skills.some(
           (skill) =>
-            proj.roles.find((role) => role.name === skill.name) !== undefined
+            proj.roles.find(
+              (role) => role.name === skill.name && role.level <= skill.level
+            ) !== undefined
         )
       ),
     };
